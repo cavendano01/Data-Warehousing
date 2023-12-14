@@ -15,3 +15,53 @@ El conjunto de datos de Northwind incluye datos de muestra para lo siguiente.
 - Productos: Información del producto
 - Transportistas: los detalles de los transportistas que envían los productos desde los comerciantes a los clientes finales.
 - Orders y Order_Details: Transacciones de órdenes de venta que tienen lugar entre los clientes y la empresa.
+
+## Convención de Nombre
+
+Todo en minuscula con "_" separando diferentes palabras. Usando abreviaturas
+cliente_id
+primer_nombre 
+
+## Entidades y Tablas de Hechos
+
+### Proveedores: 
+
+un Proveedor es una persona de contacto específica dentro de una empresa específica, esa persona tiene un título y necesitamos la dirección, ciudad, región, código postal, país, teléfono, fax y página de inicio de la empresa.
+
+| Nombre del Campo | Tipo de Datos | largo | restricciones |
+|---| ---|---|---|
+| proveedor_id | INT |  | UNIQUE NOT NULL
+| nombre_contacto | VARCHAR | 50 | Not Null | 
+| nombre_empresa | VARCHAR | 50 | Not Null | 
+| titulo_contacto | VARCHAR | 50 | Not Null | 
+| direccion |  VARCHAR | 250 | Not Null | 
+| ciudad | VARCHAR | 20 | Not Null | 
+| region | VARCHAR | 20 | Not Null | 
+| codigo_postal | INT | | |
+
+### Productos (FACT): 
+Definidos por un nombre, un proveedor, pertenecen a una categoría, Dice cuantos productos vienen por paquete, un precio unitario, una cantidad de unidades en stock y unidades pedidas al proveedor, una definición específica para saber si debe reordenarse según el nivel y una bandera si se descontinua
+
+| Nombre del Campo | Tipo de Datos | longitud | restricciones |
+|---| ---|---|---|
+| producto_id |  INT | |
+| nombre | VARCHAR | 50 |
+| producto_id | INT | |
+| categoria_id | INT |
+| items_pkg | INT  | |
+| precio_unitario | FLOAT | |
+| stock_units | INT | |
+| order_unit | INT | |
+| reorder_flag | BOOL | |
+
+
+### Categoria 
+
+
+
+## Diagrama Entidad- Relación
+
+## Data Definition Language 
+
+
+
